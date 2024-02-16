@@ -1,0 +1,1 @@
+INDEX VERSION 1.131+C:\eclipse-jee-2022-12-R-win32-x86_64\eclipse\Program\Emp_Project\.metadata\.plugins\org.eclipse.jdt.core
