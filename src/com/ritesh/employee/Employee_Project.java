@@ -7,44 +7,48 @@ public class Employee_Project {
 	public static void main(String[] args) {
 		int Attendance=0;
 		int Daily_wage=0;
-        final int Wage_Per_Hour=20;
-        final int Full_Day_Hour=8;
-        final int part_Time_Hour=4;
+        final int WAGE_PER_HOUR=20;
+        final int FULL_DAY_HOUR=8;
+        final int PART_TIME_HOUR=4;
         int Employee_Type=0;
         
         
-		
-		
-	    System.out.println("Well come Employee Wage Computation Program");
+	    System.out.println("Well come Employee Wage Computation Program On Master Branch ");
 
 		System.out.println("Enter the Attendence[0 - Absent /  1 - Present ]");
 		
 		Random random=new Random();
 		Attendance=random.nextInt(9)%2;
-	    System.out.println(Attendance);
+	   
+		switch(Attendance) {
 		
-		if(Attendance == 0) {
+		case 0:
 			System.out.println("Employee Absent ");
-		}
-		else {
+		   break;
+		
+		case 1:
+			System.out.println("Employee present");
 			Employee_Type=random.nextInt(9)%2;
-			System.out.println(Employee_Type);
+
+			switch(Employee_Type) {
 			
-			if(Employee_Type == 0) {
-				Daily_wage=Wage_Per_Hour*part_Time_Hour;
-				System.out.println("Part time Wage = "+Daily_wage);
-			}
-			else {
+			case 0:
 				
-				System.out.println("Employee present");
-				Daily_wage=Wage_Per_Hour * Full_Day_Hour;
+				Daily_wage=WAGE_PER_HOUR*PART_TIME_HOUR;
+				System.out.println("Part Time Wage = "+Daily_wage);
 				
+				break;
 				
-			}
-			System.out.println("Full Day Wage = "+Daily_wage);
+			case 1:
+				
+				Daily_wage=WAGE_PER_HOUR * FULL_DAY_HOUR;
+				System.out.println("Full Day Wage = "+Daily_wage);
+				
+				break;
+			 }
 			
 			
-		}
+		 }
 	}
 
 }
