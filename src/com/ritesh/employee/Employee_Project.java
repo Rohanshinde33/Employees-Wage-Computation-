@@ -9,6 +9,8 @@ public class Employee_Project {
 		int daily_wage=0;
 		int employee_type=0;
 		int total_wage=0;
+		int total_hr=0;
+		int total_day=1;
         final int WAGE_PER_HOUR=20;
         final int FULL_DAY_HOUR=8;
         final int PART_TIME_HOUR=4;
@@ -19,24 +21,24 @@ public class Employee_Project {
 		
 		Random random=new Random();
 		
-		for(int i = 1; i <= MONTLY_WAGE_COUNT; i++)
+		while(total_hr <= 100 && total_day <= MONTLY_WAGE_COUNT )
 		{
 			
-		attendance=random.nextInt(9)%2;
-			System.out.println("DAY "+i);
+			attendance=random.nextInt(9)%2;
+			System.out.println("DAY "+total_day);
 	   
 		switch(attendance) {
 		
 		case 0:
 			
-			System.out.println("Employee Absent ");
+				System.out.println("Employee Absent ");
 			
 		   break;
 		
 		case 1:
 			
-			System.out.println("Employee present");
-			employee_type=random.nextInt(9)%2;
+				System.out.println("Employee present");
+				employee_type=random.nextInt(9)%2;
 
 			 switch(employee_type) {
 			
@@ -44,14 +46,14 @@ public class Employee_Project {
 				
 				daily_wage=WAGE_PER_HOUR*PART_TIME_HOUR;
 				System.out.println("Part Time Wage = "+daily_wage);
-				
+				total_hr+=PART_TIME_HOUR;
 				break;
 				
 			 case 1:
 				
 				daily_wage=WAGE_PER_HOUR * FULL_DAY_HOUR;
 				System.out.println("Full Day Wage = "+daily_wage);
-				
+				total_hr+=FULL_DAY_HOUR;
 				break;
 			  }
 			 
@@ -60,9 +62,10 @@ public class Employee_Project {
 		   }	
 		        total_wage += daily_wage;
 		        System.out.println("----------------");
-			
+		        total_day++;
 		}
-				System.out.println(" Montly Total wage ="+	total_wage );
+				System.out.println("Montly Total Hour = "+total_hr);
+				System.out.println("Montly Total wage = "+	total_wage );
 	}
 
 }
