@@ -3,6 +3,7 @@ package com.ritesh.employee;
 import java.util.Random;
 
 public class Employee_Project {
+	
 
 	public static void main(String[] args) {
 		int attendance=0;
@@ -46,14 +47,14 @@ public class Employee_Project {
 				
 				daily_wage=WAGE_PER_HOUR*PART_TIME_HOUR;
 				System.out.println("Part Time Wage = "+daily_wage);
-
+				total_hr+=PART_TIME_HOUR;
 				break;
 				
 			 case 1:
 				
 				daily_wage=WAGE_PER_HOUR * FULL_DAY_HOUR;
 				System.out.println("Full Day Wage = "+daily_wage);
-			
+				total_hr+=FULL_DAY_HOUR;
 				break;
 			  }
 			 
@@ -64,7 +65,7 @@ public class Employee_Project {
 		        System.out.println("----------------");
 		        total_day++;
 		}
-			
+				System.out.println("Montly Total Hour = "+total_hr);
 				System.out.println("Montly Total wage = "+	total_wage );
 	}
 
