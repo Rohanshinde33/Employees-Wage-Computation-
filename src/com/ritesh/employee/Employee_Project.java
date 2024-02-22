@@ -4,9 +4,8 @@ import java.util.Random;
 
 public class Employee_Project {
 	
-
-	public static void main(String[] args) {
-		int attendance=0;
+		
+	    int attendance=0;
 		int daily_wage=0;
 		int employee_type=0;
 		int total_wage=0;
@@ -16,7 +15,8 @@ public class Employee_Project {
         final int FULL_DAY_HOUR=8;
         final int PART_TIME_HOUR=4;
         final int MONTLY_WAGE_COUNT=20;
-        
+	    
+        public void Employeewage() {
         
 	    System.out.println("Well come Employee Wage Computation Program On Master Branch ");
 		
@@ -64,9 +64,18 @@ public class Employee_Project {
 		        total_wage += daily_wage;
 		        System.out.println("----------------");
 		        total_day++;
-		}
+		 }
 				System.out.println("Montly Total Hour = "+total_hr);
 				System.out.println("Montly Total wage = "+	total_wage );
+				
+       }
+	
+	public static void main(String[] args) {
+		
+		Employee_Project employee_project =new Employee_Project();
+		
+		employee_project.Employeewage();
+	
 	}
 
 }
