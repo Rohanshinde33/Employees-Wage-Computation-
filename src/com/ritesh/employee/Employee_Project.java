@@ -4,25 +4,26 @@ import java.util.Random;
 
 public class Employee_Project {
 	
-		
 	    int attendance=0;
 		int daily_wage=0;
 		int employee_type=0;
 		int total_wage=0;
 		int total_hr=0;
 		int total_day=1;
-        final int WAGE_PER_HOUR=20;
+        int wage_per_hour;
+        int working_day;
+        int working_month_hr;
         final int FULL_DAY_HOUR=8;
         final int PART_TIME_HOUR=4;
-        final int MONTLY_WAGE_COUNT=20;
+        
 	    
-        public void Employeewage() {
+        public void Employeewage(int wage_per_hour,int working_day,int working_month_hr) {
         
 	    System.out.println("Well come Employee Wage Computation Program On Master Branch ");
 		
 		Random random=new Random();
 		
-		while(total_hr <= 100 && total_day <= MONTLY_WAGE_COUNT )
+		while(total_hr <= working_month_hr  && total_day <= working_day )
 		{
 			
 			attendance=random.nextInt(9)%2;
@@ -45,16 +46,18 @@ public class Employee_Project {
 			
 			 case 0:
 				
-				daily_wage=WAGE_PER_HOUR*PART_TIME_HOUR;
+				daily_wage= wage_per_hour*PART_TIME_HOUR;
 				System.out.println("Part Time Wage = "+daily_wage);
 				total_hr+=PART_TIME_HOUR;
+				
 				break;
 				
 			 case 1:
 				
-				daily_wage=WAGE_PER_HOUR * FULL_DAY_HOUR;
+				daily_wage= wage_per_hour * FULL_DAY_HOUR;
 				System.out.println("Full Day Wage = "+daily_wage);
 				total_hr+=FULL_DAY_HOUR;
+				
 				break;
 			  }
 			 
@@ -73,9 +76,12 @@ public class Employee_Project {
 	public static void main(String[] args) {
 		
 		Employee_Project employee_project =new Employee_Project();
+		employee_project.Employeewage(15,21,99);
 		
-		employee_project.Employeewage();
-	
+		System.out.println("----------------");
+		
+		Employee_Project employee_project2 =new Employee_Project();
+		employee_project2.Employeewage(19,25,120);
 	}
 
 }
